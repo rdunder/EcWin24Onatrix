@@ -1,0 +1,24 @@
+:root {
+    /* Colors */
+    --primary-color: #4F5955;
+    --primary-color-20: #4F595590;
+    --accent-color: #D9C3A9;
+    --bg-light: #F2EDDC;
+    --text-color-dark: #535656;
+    --text-color-light: #FFFFFF;
+    --note-color: #9C9EA6;
+    --bg-white: #FFFFFF;
+    --bg-grey: #F7F7F7;
+    
+   
+    --font-family: 'Poppins', sans-serif;
+    
+
+    --section-spacing: 6rem;
+    --container-padding: 2rem;
+    
+
+    --border-radius: 3px;
+    --box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    --transition: all 0.3s ease;
+}
