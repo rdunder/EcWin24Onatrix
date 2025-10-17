@@ -1,7 +1,7 @@
 :root {
     /* Colors */
     --primary-color: #4F5955;
-    --primary-color-20: #4F595590;
+    --primary-color-98: #4F595598;
     --accent-color: #D9C3A9;
     --bg-light: #F2EDDC;
     --text-color-dark: #535656;
@@ -9,6 +9,7 @@
     --note-color: #9C9EA6;
     --bg-white: #FFFFFF;
     --bg-grey: #F7F7F7;
+    --border-color: #EAEAEA;
     
    
     --font-family: 'Poppins', sans-serif;

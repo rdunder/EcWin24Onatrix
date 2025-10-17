@@ -6,6 +6,41 @@
     padding: 0 2rem;
 }
 
+.breadcrumb {
+    position: relative;
+    padding: 3.5rem 0;
+    background-color: var(--bg-grey);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+
+    span {
+        color: var(--text-color-dark);
+        font-size: 0.8rem;
+    }
+
+    .breadcrumb-current {
+        color: var(--accent-color);
+    }
+
+    img {
+        position: absolute;
+    }
+
+    .breadcrumb-left {
+        height: 120px;
+        bottom: 0;
+        left: 0;
+    }
+
+    .breadcrumb-right {
+        height: 160px;
+        top: 0;
+        right: 0;
+    }
+}
+
 .btn-primary {
     background-color: var(--primary-color);
     color: var(--text-color-light);
@@ -29,6 +64,30 @@
     text-transform: uppercase;
     display: block;
     margin-bottom: 1rem;
+}
+
+.contact-info-card {
+
+    .container {
+        padding-top: 2rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .content {
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+    }
+
+    span {
+        font-weight: 700;
+    }
+
+    h2 {
+        max-width: 15ch;
+    }
 }
 
 
@@ -165,13 +224,7 @@ header {
                 margin-bottom: 2rem;
             }
 
-            blockquote {
-                font-size: 1.25rem;
-                font-weight: 300;
-                font-style: italic;
-                color: var(--text-color-dark);
-                margin-bottom: 1.5rem;
-            }
+            
 
             p {
                 font-size: 0.875rem;
@@ -375,7 +428,8 @@ header {
 }
 
 .recent-projects {
-    padding: 15rem 0;
+    padding-top: 15rem;
+    padding-bottom: 2rem;
 
     h2 {
         margin-bottom: 3rem;
@@ -402,7 +456,11 @@ header {
         }
         
         .project-info {
-            background-color: var(--primary-color-20);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            background-color: var(--primary-color-98);
             color: var(--text-color-light);
             padding: 1.5rem;
             transition: padding 0.1s ease-in;
@@ -411,6 +469,14 @@ header {
         p {
             font-size: 0.85rem;
             font-weight: 300;
+        }
+
+        i {
+            font-size: 1.2rem;
+            color: var(--text-color-light);
+            opacity: 0;
+
+            transition: all 0.3s ease;
         }
 
         &:hover {
@@ -424,50 +490,63 @@ header {
             h3 {
                 color: var(--accent-color);
             }
+
+            i {
+                opacity: 1;
+            }
         }
 
         
     }
 }
 
+.partners {
+    padding-block: 2rem;
+
+    .partners-list {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+        gap: 4rem;
+    }
+
+    img {
+        object-fit: cover;
+        opacity: 0.6;
+        transition: opacity 0.3s;
+    }
+
+    img:hover {
+        opacity: 1;
+        cursor: pointer;
+    }
+}
+
+footer {    
+    background-color: black;
+    color: var(--text-color-light);
+    padding: 1.5rem 0;
+    font-size: 0.875rem;
+
+    .container {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+    }
+
+    p {
+        opacity: 0.5;
+    }
+
+    span {
+        color: var(--accent-color);
+        font-size: 1rem;
+    }
+}
 
 /*
 
-
-
-
-.partners {
-    padding: 3rem 0;
-    background-color: var(--bg-white);
-}
-
-.partners-list {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: 2rem;
-}
-
-.partners-list img {
-    max-height: 60px;
-    object-fit: contain;
-    opacity: 0.7;
-    transition: opacity 0.3s;
-}
-
-.partners-list img:hover {
-    opacity: 1;
-}
-
-
-.section-label {
-    color: var(--accent-color);
-    font-size: 0.875rem;
-    font-weight: 700;
-    text-transform: uppercase;
-    display: block;
-    margin-bottom: 1rem;
-}
 
 .btn-primary {
     background-color: var(--primary-color);
