@@ -18,7 +18,7 @@ using Umbraco.Extensions;
 
 namespace Umbraco.Cms.Web.Common.PublishedModels
 {
-	/// <summary>Service Section</summary>
+	/// <summary>Services Section</summary>
 	[PublishedModel("serviceSection")]
 	public partial class ServiceSection : PublishedElementModel
 	{
@@ -54,15 +54,23 @@ namespace Umbraco.Cms.Web.Common.PublishedModels
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "16.3.1+6458bb4")]
 		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
-		[ImplementPropertyType("serviceLabel")]
-		public virtual string ServiceLabel => this.Value<string>(_publishedValueFallback, "serviceLabel");
+		[ImplementPropertyType("servicesLabel")]
+		public virtual string ServicesLabel => this.Value<string>(_publishedValueFallback, "servicesLabel");
+
+		///<summary>
+		/// ServiceList
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "16.3.1+6458bb4")]
+		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
+		[ImplementPropertyType("servicesList")]
+		public virtual global::Umbraco.Cms.Core.Models.Blocks.BlockListModel ServicesList => this.Value<global::Umbraco.Cms.Core.Models.Blocks.BlockListModel>(_publishedValueFallback, "servicesList");
 
 		///<summary>
 		/// Title
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "16.3.1+6458bb4")]
 		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
-		[ImplementPropertyType("serviceTitle")]
-		public virtual global::Umbraco.Cms.Core.Strings.IHtmlEncodedString ServiceTitle => this.Value<global::Umbraco.Cms.Core.Strings.IHtmlEncodedString>(_publishedValueFallback, "serviceTitle");
+		[ImplementPropertyType("servicesTitle")]
+		public virtual global::Umbraco.Cms.Core.Strings.IHtmlEncodedString ServicesTitle => this.Value<global::Umbraco.Cms.Core.Strings.IHtmlEncodedString>(_publishedValueFallback, "servicesTitle");
 	}
 }

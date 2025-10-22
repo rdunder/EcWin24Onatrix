@@ -18,7 +18,7 @@ using Umbraco.Extensions;
 
 namespace Umbraco.Cms.Web.Common.PublishedModels
 {
-	/// <summary>Service Settings</summary>
+	/// <summary>Services Settings</summary>
 	[PublishedModel("serviceSettings")]
 	public partial class ServiceSettings : PublishedElementModel
 	{
@@ -54,14 +54,14 @@ namespace Umbraco.Cms.Web.Common.PublishedModels
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "16.3.1+6458bb4")]
 		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
-		[ImplementPropertyType("serviceBgColor")]
-		public virtual global::Umbraco.Cms.Core.PropertyEditors.ValueConverters.ColorPickerValueConverter.PickedColor ServiceBgColor => this.Value<global::Umbraco.Cms.Core.PropertyEditors.ValueConverters.ColorPickerValueConverter.PickedColor>(_publishedValueFallback, "serviceBgColor");
+		[ImplementPropertyType("servicesBgColor")]
+		public virtual global::Umbraco.Cms.Core.PropertyEditors.ValueConverters.ColorPickerValueConverter.PickedColor ServicesBgColor => this.Value<global::Umbraco.Cms.Core.PropertyEditors.ValueConverters.ColorPickerValueConverter.PickedColor>(_publishedValueFallback, "servicesBgColor");
 
 		///<summary>
 		/// show Label
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "16.3.1+6458bb4")]
-		[ImplementPropertyType("showServiceLabel")]
-		public virtual bool ShowServiceLabel => this.Value<bool>(_publishedValueFallback, "showServiceLabel");
+		[ImplementPropertyType("showServicesLabel")]
+		public virtual bool ShowServicesLabel => this.Value<bool>(_publishedValueFallback, "showServicesLabel");
 	}
 }
