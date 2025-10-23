@@ -343,7 +343,6 @@ header {
     }
 }
 
-
 .about-us {
     margin-top: -50px;
 
@@ -358,6 +357,7 @@ header {
         grid-template-columns: 1.5fr 1fr;
         gap: 2rem;
         align-items: start;
+        padding-bottom: 4rem;
 
         @media (width <= 768px) {
             grid-template-columns: 1fr;
@@ -450,9 +450,6 @@ header {
     }
 }
 
-
-
-
 .services {
     padding: 6rem 0;
     background-color: var(--bg-grey);
@@ -470,9 +467,10 @@ header {
         color: var(--primary-color);
         text-align: center;
         margin-bottom: 3rem;
+        max-width: 22ch;
     }
 
-    .services-list {
+    .umb-block-list {
         display: grid;
         grid-template-columns: repeat(3, 1fr);
         gap: 1.5rem;
