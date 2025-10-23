@@ -1,1 +1,23 @@
-﻿
+﻿@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage<Umbraco.Cms.Core.Models.Blocks.BlockListItem>;
+@using ContentModels = Umbraco.Cms.Web.Common.PublishedModels;
+@{
+    var content = (ContentModels.ServiceSection)Model.Content;
+    var settings = Model.Settings as ContentModels.ServiceSettings;
+    
+    var rootContent = Umbraco.ContentAtRoot();
+    var siteSettings = rootContent.OfType<ContentModels.SiteSettings>().FirstOrDefault();
+}
+
+<section class="services">
+    <div class="container">
+        @if (settings!.ShowServicesLabel)
+        {
+            <span class="section-label">@content.ServicesLabel</span>
+        }
+        
+        <h2>@content.ServicesTitle</h2>
+
+        @Html.GetBlockListHtml(content.ServicesList)
+        
+    </div>
+</section>
