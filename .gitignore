@@ -419,3 +419,8 @@ FodyWeavers.xsd
 
 # Visual Studio Code
 Design/.vscode/*
+
+##
+## Jetbrains Rider
+##
+.idea/*
