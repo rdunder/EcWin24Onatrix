@@ -56,5 +56,13 @@ namespace Umbraco.Cms.Web.Common.PublishedModels
 		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
 		[ImplementPropertyType("partnerImage")]
 		public virtual global::Umbraco.Cms.Core.Models.MediaWithCrops PartnerImage => this.Value<global::Umbraco.Cms.Core.Models.MediaWithCrops>(_publishedValueFallback, "partnerImage");
+
+		///<summary>
+		/// PartnerName
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "16.3.1+6458bb4")]
+		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
+		[ImplementPropertyType("partnerName")]
+		public virtual string PartnerName => this.Value<string>(_publishedValueFallback, "partnerName");
 	}
 }
