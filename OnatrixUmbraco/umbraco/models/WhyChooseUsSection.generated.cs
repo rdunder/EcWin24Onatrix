@@ -71,7 +71,7 @@ namespace Umbraco.Cms.Web.Common.PublishedModels
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "16.3.1+6458bb4")]
 		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
 		[ImplementPropertyType("chooseUsLink")]
-		public virtual global::System.Collections.Generic.IEnumerable<global::Umbraco.Cms.Core.Models.Link> ChooseUsLink => this.Value<global::System.Collections.Generic.IEnumerable<global::Umbraco.Cms.Core.Models.Link>>(_publishedValueFallback, "chooseUsLink");
+		public virtual global::Umbraco.Cms.Core.Models.Link ChooseUsLink => this.Value<global::Umbraco.Cms.Core.Models.Link>(_publishedValueFallback, "chooseUsLink");
 
 		///<summary>
 		/// ChooseUsSubTitle
