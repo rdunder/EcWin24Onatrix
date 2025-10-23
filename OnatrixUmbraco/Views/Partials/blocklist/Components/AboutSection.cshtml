@@ -1,1 +1,43 @@
-﻿
+﻿@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage<Umbraco.Cms.Core.Models.Blocks.BlockListItem>;
+@using ContentModels = Umbraco.Cms.Web.Common.PublishedModels;
+@{
+    var content = (ContentModels.AboutSection)Model.Content;
+    var settings = Model.Settings as ContentModels.AboutSection;
+    
+    var rootContent = Umbraco.ContentAtRoot();
+    var siteSettings = rootContent.OfType<ContentModels.SiteSettings>().FirstOrDefault();
+}
+
+<section class="about-us">
+    <div class="container">
+        <div class="about-content">
+            <span class="section-label">@content.AboutLabel</span>
+            <h2>@content.AboutTitle</h2>
+            <p>@content.AboutText</p>
+            <div class="about-ceo">
+                @if (siteSettings?.CeoSignature != null)
+                {
+                    <img src="@siteSettings.CeoSignature?.Url()" alt=@($"{@siteSettings.CeoName} Signature")/>
+                }
+                @if (siteSettings?.CeoName != null && siteSettings.CeoTitle != null)
+                {
+                    <span>@siteSettings.CeoName - @siteSettings.CeoTitle</span>
+                }
+            </div>
+        </div>
+        <form class="about-form">
+            <h3>Request a call back</h3>
+            <div class="input-group">
+                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sequi, nesciunt aspernatur.</p>
+                <input type="text" placeholder="Name" />
+                <input type="email" placeholder="Email address" />
+                <input type="tel" placeholder="Phone" />
+                <select>
+                    <option>Financial consulting</option>
+                </select>
+                <button type="submit">Submit</button>
+            </div>
+                        
+        </form>
+    </div>
+</section>
