@@ -1,0 +1,11 @@
+﻿@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage<Umbraco.Cms.Core.Models.Blocks.BlockListItem>;
+@using ContentModels = Umbraco.Cms.Web.Common.PublishedModels;
+@{
+    var content = (ContentModels.SuccessStoryStatisticsItem)Model.Content;
+}
+
+
+<div class="metric">
+    <div class="metric-value" style="color:#d9c3a9">@content.StatisticNumber</div>
+    <div class="metric-label">@content.StatisticText</div>
+</div>

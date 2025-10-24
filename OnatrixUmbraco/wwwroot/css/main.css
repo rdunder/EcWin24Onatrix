@@ -564,21 +564,28 @@ header {
     text-align: center;
 
     .container {
-        background-image: url("../images/success-map.svg");
+        /*background-image: url("../images/success-map.svg");*/
         background-repeat: no-repeat;
-        background-position: 0% 10px;
+        background-position: 0% 10px;        
+    }
+    
+    .container .umb-block-list {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 2rem;
+        margin-bottom: 3rem;
     }
 
     h2 {
         margin-bottom: 3rem;
     }
 
-    .success-metrics {
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        gap: 2rem;
-        margin-bottom: 3rem;
-    }
+    /*.success-metrics {*/
+    /*    display: grid;*/
+    /*    grid-template-columns: repeat(3, 1fr);*/
+    /*    gap: 2rem;*/
+    /*    margin-bottom: 3rem;*/
+    /*}*/
 
     .metric {
         .metric-value {
