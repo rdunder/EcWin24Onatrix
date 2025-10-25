@@ -697,10 +697,16 @@ header {
     }
 }
 
-.partners {
-    padding-block: 2rem;
 
-    .partners-list {
+.partners {
+    padding-top: 15rem;
+    padding-bottom: 3rem;
+    
+    .container {
+        
+    }
+    
+    .container > div {
         display: flex;
         flex-wrap: wrap;
         justify-content: center;
@@ -719,6 +725,8 @@ header {
         cursor: pointer;
     }
 }
+
+
 
 footer {
     background-color: black;

@@ -1,1 +1,24 @@
-﻿
+﻿@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage<Umbraco.Cms.Core.Models.Blocks.BlockListItem>;
+@using ContentModels = Umbraco.Cms.Web.Common.PublishedModels;
+
+@using Umbraco.Cms.Core.Models.Blocks
+@using Umbraco.Cms.Core.Composing
+
+@{
+    var content = (ContentModels.PartnersSection)Model.Content;
+    var partnerList = content.PartnerList;
+}
+
+<section class="partners">
+    <div class="container">
+        <div class="partners-list">
+            @if (partnerList != null)
+            {
+                foreach (var item in partnerList)
+                {
+                    @Html.Partial("Partials/blocklist/Components/PartnerLogo", item);
+                }
+            }
+        </div>
+    </div>
+</section>
