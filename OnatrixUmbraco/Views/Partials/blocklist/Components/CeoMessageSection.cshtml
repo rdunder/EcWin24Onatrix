@@ -1,0 +1,23 @@
+﻿@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage<Umbraco.Cms.Core.Models.Blocks.BlockListItem>;
+@using ContentModels = Umbraco.Cms.Web.Common.PublishedModels;
+@{
+    var content = (ContentModels.CeoMessageSection)Model.Content;
+    
+    var rootContent = Umbraco.ContentAtRoot();
+    var siteSettings = rootContent.OfType<ContentModels.SiteSettings>().FirstOrDefault();
+}
+
+<section class="ceo-message-section">
+    <div class="container">
+        <div class="about-intro-image">
+            <img src="@siteSettings?.CeoImage?.Url()" alt="About CEO" />
+            <span>@siteSettings?.CeoName - @siteSettings?.CeoTitle</span>
+        </div>
+        <div class="about-intro-content">
+
+            <blockquote>@content.CeoMessageTitle</blockquote>
+
+            @Html.Raw(content.CeoMessageText)
+        </div>
+    </div>
+</section>

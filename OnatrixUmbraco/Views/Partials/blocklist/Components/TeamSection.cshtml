@@ -1,1 +1,22 @@
-﻿
+﻿@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage<Umbraco.Cms.Core.Models.Blocks.BlockListItem>;
+@using ContentModels = Umbraco.Cms.Web.Common.PublishedModels;
+@{
+    var content = (ContentModels.TeamSection)Model.Content;
+}
+
+<section class="team-section">
+    <div class="container">
+        <span class="section-label">OUR EXPERTS</span>
+        <h2>A team of professionals with years of experience</h2>
+
+        <div class="member-card-container">
+            @if (content.TeamMemberList != null)
+            {
+                foreach (var member in content.TeamMemberList)
+                {
+                    <partial name="Partials/blocklist/Components/TeamMember" model="member" />
+                }
+            }
+        </div>
+    </div>
+</section>
