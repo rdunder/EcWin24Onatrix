@@ -202,15 +202,17 @@ header {
 
         .social-links {
             display: flex;
-            gap: 0.5rem;
+            align-items: center;
+            gap: 0.4rem;
         }
-
-        hr {
-            width: 1px;
-            height: 1.5rem;
-            background-color: #FFFFFF40;
-            border: none;
-            transform: rotate(0deg);
+        
+        a {
+            border-left: 1px solid var(--border-color);
+            padding-inline: 0.4rem;
+            
+            &:last-child {
+                border-right: 1px solid var(--border-color);
+            }
         }
 
         i {
@@ -332,6 +334,12 @@ header {
     .content {
         width: 50%;
         padding-bottom: 5rem;
+        padding-top: 1.5rem;
+        
+        h1 {
+            line-height: 1.2;
+            margin-bottom: 2rem;
+        }
         
         @media (width <= 768px) {
             padding-block: 2rem;
@@ -718,6 +726,14 @@ header {
         object-fit: cover;
         opacity: 0.6;
         transition: opacity 0.3s;
+        
+        @media (width <= 1200px) {
+            max-width: 80px;
+        }
+        @media (width <= 768px) {
+            max-width: 55px;
+        }
+        
     }
 
     img:hover {
