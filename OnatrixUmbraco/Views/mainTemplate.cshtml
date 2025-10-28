@@ -2,6 +2,12 @@
 @inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage
 @{
 	Layout = null;
+
+    var rootContent = Umbraco.ContentAtRoot();
+    var siteSettings = rootContent.OfType<SiteSettings>().FirstOrDefault();
+
+    var siteName = siteSettings?.SiteName ?? "Onatrix";
+    var siteTitle = Model.Level == 1 ? $"{siteName}" : $"{siteName} | {Model.Name}";
 }
 
 <!DOCTYPE html>
@@ -9,16 +15,16 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title>Onatrix</title>
+        <title>@siteTitle</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
-        <link rel="stylesheet" href="/css/variables.css">
-        <link rel="stylesheet" href="/css/reset.css">
-        <link rel="stylesheet" href="/css/main.css">
-        <link rel="stylesheet" href="/css/sections.css">
+        <link rel="stylesheet" href="/css/variables.css" asp-append-version="true">
+        <link rel="stylesheet" href="/css/reset.css" asp-append-version="true">
+        <link rel="stylesheet" href="/css/main.css" asp-append-version="true">
+        <link rel="stylesheet" href="/css/sections.css" asp-append-version="true">
     </head>
 <body>
 
