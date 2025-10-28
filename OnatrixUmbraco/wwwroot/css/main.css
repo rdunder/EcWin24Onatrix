@@ -6,6 +6,22 @@
     padding: 0 2rem;
 }
 
+.flex-container {
+    display: flex;    
+}
+
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0,0,0,0);
+    white-space: nowrap;
+    border: 0;
+}
+
 .page-header {
     position: relative;
     padding: 3.5rem 0;
@@ -153,6 +169,21 @@ blockquote, blockquote * {
     }
 }
 
+.input-group {
+    width: 100%;
+    input {
+        padding: 1rem 1.5rem;
+        font-size: 1rem;
+        border: 1px solid var(--input-border-color);
+        border-radius: var(--border-radius);
+        width: 100%;
+    }
+}
+
+
+
+
+
 .contact-info-card {
 
     .container {
@@ -211,7 +242,6 @@ blockquote, blockquote * {
         }
     }
 }
-
 
 header {
     position: sticky;
