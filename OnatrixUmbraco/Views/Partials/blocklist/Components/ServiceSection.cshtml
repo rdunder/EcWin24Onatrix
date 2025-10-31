@@ -3,12 +3,19 @@
 @{
     var content = (ContentModels.ServiceSection)Model.Content;
     var settings = Model.Settings as ContentModels.ServiceSettings;
-    
-    var rootContent = Umbraco.ContentAtRoot();
-    var siteSettings = rootContent.OfType<ContentModels.SiteSettings>().FirstOrDefault();
+
+    var backgroundColor = settings?.ServicesBgColor?.Color ?? "#FFFFFF";
+
+    var currentPage = Umbraco.AssignedContentItem;
+    var siteRoot = currentPage.Root();
+
+    var servicePage = siteRoot.Children<ServicePage>()?.FirstOrDefault();
+    var items = servicePage?
+        .Children<ServiceDetail>()?
+        .OrderByDescending(x => x.CreateDate).ToList() ?? [];
 }
 
-<section class="services">
+<section class="services" style="background-color: @backgroundColor">
     <div class="container">
         @if (settings!.ShowServicesLabel)
         {
@@ -16,8 +23,27 @@
         }
         
         <h2>@content.ServicesTitle</h2>
-
-        @Html.GetBlockListHtml(content.ServicesList)
         
+        <div class="service-card-list">
+            @if (items.Any())
+            {
+                foreach (var item in items)
+                {
+                    <div class="service-card">
+                        <a href="@item.Url()">
+                            <h3>@item.Name</h3>
+
+                            <img src="@item.ServiceDetailThumbnail?.Url()" alt="@item.Name"/>
+
+                            <p>@item.ServiceDetailExcerpt</p>
+                        </a>
+                    </div>
+                }    
+            }
+            else
+            {
+                <p>No Services Available</p>
+            }
+        </div>
     </div>
 </section>

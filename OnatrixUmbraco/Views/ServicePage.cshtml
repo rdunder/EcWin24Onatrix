@@ -1,7 +1,8 @@
 ﻿@using Umbraco.Cms.Web.Common.PublishedModels;
-@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage
+@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage<ServicePage>
 @{
 	Layout = "mainTemplate.cshtml";
 }
 
 <partial name="Partials/Layout/_PageHeader" model="(IPageHeader)Model"/>
+@Html.GetBlockListHtml(Model.Sections)

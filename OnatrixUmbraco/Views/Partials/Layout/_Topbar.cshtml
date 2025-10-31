@@ -8,7 +8,7 @@
 
 <div class="top-banner">
     <div class="container">
-        <p>@siteSettings?.ContactAddress ?? "No Address"</p>
+        <p>@(siteSettings?.ContactAddress ?? "No Address")</p>
         <div class="social-links">
             @if (siteSettings?.PlatformList != null)
             {
