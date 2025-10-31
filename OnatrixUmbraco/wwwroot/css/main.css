@@ -38,6 +38,7 @@
     
     .breadcrumb {
         display: flex;
+        flex-direction: row;
         gap: 0.5rem;
         align-items: center;
         color: var(--text-color-dark);
@@ -320,6 +321,7 @@ header {
             ul {
                 list-style: none;
                 display: flex;
+                flex-direction: row;
                 gap: 2rem;
 
                 li {
