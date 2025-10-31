@@ -26,10 +26,20 @@ h2 {
 
 h3 {
     font-size: 1.15rem;
-    font-weight: 500;
+    font-weight: 700;
 }
 
-
+ul {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    
+    li {
+        &::marker {
+            color: var(--accent-color);
+        }
+    }
+}
 
 @media (width <= 768px) {
     h1 {
