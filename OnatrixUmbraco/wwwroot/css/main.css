@@ -7,7 +7,11 @@
 }
 
 .flex-container {
-    display: flex;    
+    display: flex;
+    
+    @media (width <= 768px) {
+        flex-direction: column;
+    }
 }
 
 .sr-only {
