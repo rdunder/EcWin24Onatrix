@@ -18,7 +18,7 @@ using Umbraco.Extensions;
 
 namespace Umbraco.Cms.Web.Common.PublishedModels
 {
-	/// <summary>AboutSection</summary>
+	/// <summary>About Section</summary>
 	[PublishedModel("aboutSection")]
 	public partial class AboutSection : PublishedElementModel
 	{
@@ -48,6 +48,22 @@ namespace Umbraco.Cms.Web.Common.PublishedModels
 		}
 
 		// properties
+
+		///<summary>
+		/// About Callback Form Description
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "16.3.1+6458bb4")]
+		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
+		[ImplementPropertyType("aboutCallbackFormDescription")]
+		public virtual string AboutCallbackFormDescription => this.Value<string>(_publishedValueFallback, "aboutCallbackFormDescription");
+
+		///<summary>
+		/// About Callback Form Title
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "16.3.1+6458bb4")]
+		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
+		[ImplementPropertyType("aboutCallbackFormTitle")]
+		public virtual string AboutCallbackFormTitle => this.Value<string>(_publishedValueFallback, "aboutCallbackFormTitle");
 
 		///<summary>
 		/// Label
