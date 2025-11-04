@@ -185,6 +185,31 @@ blockquote, blockquote * {
     }
 }
 
+.field-validation-error {
+    color: firebrick;
+    font-size: 0.7rem;
+    font-weight: 300;
+}
+
+.custom-select-input {
+    display: flex;
+    align-items: center;
+    position: relative;
+    
+    select {
+        flex: 1;
+        appearance: none;
+        padding-right: 2rem;
+    }
+    
+    .select-input-icon {
+        position: absolute;
+        right: 10px;
+        top: 50%;
+        transform: translateY(-75%);
+        pointer-events: none;
+    }
+}
 
 
 
@@ -485,21 +510,28 @@ header {
             font-size: 1.875rem;
             font-weight: 700;
             margin-bottom: 2rem;
-            padding: 1.5rem;
+            padding-block: 1.5rem;
+        }
+        
+        p, h3 {
+            padding-inline: 2rem;
+        }
+        
+        p {
+            margin-bottom: 1rem;
         }
 
-        .input-group {
+        form {
             padding-inline: 2rem;
             padding-bottom: 2rem;
             display: flex;
             flex-direction: column;
-            gap: 1rem;
+            gap: 1.5rem;
         }
 
         input, select {
             width: 100%;
             padding: 0.875rem;
-            margin-bottom: 1rem;
             border: 1px solid var(--note-color);
             background-color: transparent;
             color: var(--text-color-dark);
