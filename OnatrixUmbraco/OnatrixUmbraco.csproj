@@ -19,6 +19,7 @@
 
   <ItemGroup>
     <Folder Include="App_Plugins\" />
+    <Folder Include="Controllers\" />
     <Folder Include="wwwroot\images\" />
   </ItemGroup>
 
