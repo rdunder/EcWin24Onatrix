@@ -31,6 +31,20 @@
             <p>@content.AboutCallbackFormDescription</p>
             
             <partial name="Partials/Forms/CallbackForm" model="new CallbackFormViewModel()"/>
+            
+            @if (TempData["FormError"] != null)
+            {
+                <div class="form-feedback-error">
+                    <p>@TempData["FormError"]</p>
+                </div>
+            }
+            else if (TempData["Success"] != null)
+            {
+                <div class="form-feedback-success">
+                    <p>@TempData["Success"]</p>
+                </div>
+            }
+            
         
         </div>
     </div>

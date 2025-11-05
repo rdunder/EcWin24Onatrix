@@ -185,10 +185,36 @@ blockquote, blockquote * {
     }
 }
 
+.input-validation-error {
+    box-shadow: var(--error-box-shadow);
+    
+    &:focus {
+        border: 1px solid firebrick;
+    }
+}
+
 .field-validation-error {
     color: firebrick;
     font-size: 0.7rem;
     font-weight: 300;
+}
+
+.form-feedback-error {
+    padding-inline: 1.5rem;
+    p {
+        background-color: var(--error-message-bg);
+        color: var(--error-message-color);
+        padding-block: 1.5rem;
+    }
+}
+
+.form-feedback-success {
+    padding-inline: 1.5rem;
+    p {
+        background-color: var(--sucess-message-bg);
+        color: var(--sucess-message-color);
+        padding-block: 1.5rem;
+    }
 }
 
 .custom-select-input {
