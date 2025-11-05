@@ -36,9 +36,10 @@
             <div class="custom-select-input">
                 <select asp-for="SelectedOption">
                     <option value="" disabled hidden selected>Please select an option</option>
-                    <option value="Financial Consulting">Financial Consulting</option>
-                    <option value="Assurance Consulting">Assurance Consulting</option>
-                    <option value="Tax Consulting">Tax Consulting</option>
+                    @foreach (var option in Model.Options)
+                    {
+                        <option value="@option">@option</option>
+                    }
                 </select>
                 <span class="select-input-icon"><i class="fa-solid fa-angle-down"></i></span>
             </div>

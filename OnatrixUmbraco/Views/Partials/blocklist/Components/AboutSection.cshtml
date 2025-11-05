@@ -3,7 +3,10 @@
 @using ContentModels = Umbraco.Cms.Web.Common.PublishedModels;
 @{
     var content = (ContentModels.AboutSection)Model.Content;
-    var settings = Model.Settings as ContentModels.AboutSection;
+    var settings = Model.Settings as ContentModels.AboutSectionSettings;
+
+    var options = settings?.CallbackRequestOptions ?? [];
+    var callbackFormModel = new CallbackFormViewModel() { Options = options };
     
     var rootContent = Umbraco.ContentAtRoot();
     var siteSettings = rootContent.OfType<ContentModels.SiteSettings>().FirstOrDefault();
@@ -30,7 +33,7 @@
             <h3>@content.AboutCallbackFormTitle</h3>
             <p>@content.AboutCallbackFormDescription</p>
             
-            <partial name="Partials/Forms/CallbackForm" model="new CallbackFormViewModel()"/>
+            <partial name="Partials/Forms/CallbackForm" model="callbackFormModel"/>
             
             @if (TempData["FormError"] != null)
             {
