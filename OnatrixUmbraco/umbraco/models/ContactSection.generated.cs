@@ -50,6 +50,30 @@ namespace Umbraco.Cms.Web.Common.PublishedModels
 		// properties
 
 		///<summary>
+		/// Description
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "16.3.1+6458bb4")]
+		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
+		[ImplementPropertyType("contactCallbackFormDescription")]
+		public virtual string ContactCallbackFormDescription => this.Value<string>(_publishedValueFallback, "contactCallbackFormDescription");
+
+		///<summary>
+		/// Label
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "16.3.1+6458bb4")]
+		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
+		[ImplementPropertyType("contactCallbackFormLabel")]
+		public virtual string ContactCallbackFormLabel => this.Value<string>(_publishedValueFallback, "contactCallbackFormLabel");
+
+		///<summary>
+		/// Title
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "16.3.1+6458bb4")]
+		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
+		[ImplementPropertyType("contactCallbackFormTitle")]
+		public virtual string ContactCallbackFormTitle => this.Value<string>(_publishedValueFallback, "contactCallbackFormTitle");
+
+		///<summary>
 		/// Background Image
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "16.3.1+6458bb4")]

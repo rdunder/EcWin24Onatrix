@@ -50,6 +50,14 @@ namespace Umbraco.Cms.Web.Common.PublishedModels
 		// properties
 
 		///<summary>
+		/// CallbackFormOptions
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "16.3.1+6458bb4")]
+		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
+		[ImplementPropertyType("callbackFormOptions")]
+		public virtual global::System.Collections.Generic.IEnumerable<string> CallbackFormOptions => this.Value<global::System.Collections.Generic.IEnumerable<string>>(_publishedValueFallback, "callbackFormOptions");
+
+		///<summary>
 		/// CEO Image
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "16.3.1+6458bb4")]

@@ -1,8 +1,14 @@
 ﻿@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage<Umbraco.Cms.Core.Models.Blocks.BlockListItem>;
+@using OnatrixUmbraco.ViewModels
 @using ContentModels = Umbraco.Cms.Web.Common.PublishedModels;
 @{
     var content = (ContentModels.ContactSection)Model.Content;
     // var settings = Model.Settings as ContentModels.HeroSection;
+    
+    var rootContent = Umbraco.ContentAtRoot();
+    var siteSettings = rootContent.OfType<ContentModels.SiteSettings>().FirstOrDefault();
+    var callbackFormOptions = siteSettings?.CallbackFormOptions ?? [];
+    var callbackFormModel = new CallbackFormViewModel() { Options = callbackFormOptions };
 }
 
 <section class="contact-section" style="background-image: url(@content.ContactSectionBgImage?.Url())">
@@ -12,29 +18,32 @@
             <h2>@content.ContactSectionTitle</h2>
             <p>@content.ContactSectionText</p>
         </div>
-        <form>
-            <div class="flex-container">
-                <div class="input-group">
-                    <label class="sr-only">Name</label>
-                    <input placeholder="Name"/>
-                </div>
-                <div class="input-group">
-                    <label class="sr-only">Phone</label>
-                    <input placeholder="Phone"/>
-                </div>
-            </div>
-            <div class="flex-container">
-                <div class="input-group">
-                    <label class="sr-only">Email</label>
-                    <input placeholder="Email"/>
-                </div>
-                <div class="input-group">
-                    <label class="sr-only">Financial consulting</label>
-                    <input placeholder="Financial Consulting"/>
-                </div>
-            </div>
-
-            <button class="btn-primary">Submit</button>
-        </form>
+        
+        <partial name="Partials/Forms/CallbackForm" model="callbackFormModel"/>
+        
+        @* <form> *@
+        @*     <div class="flex-container"> *@
+        @*         <div class="input-group"> *@
+        @*             <label class="sr-only">Name</label> *@
+        @*             <input placeholder="Name"/> *@
+        @*         </div> *@
+        @*         <div class="input-group"> *@
+        @*             <label class="sr-only">Phone</label> *@
+        @*             <input placeholder="Phone"/> *@
+        @*         </div> *@
+        @*     </div> *@
+        @*     <div class="flex-container"> *@
+        @*         <div class="input-group"> *@
+        @*             <label class="sr-only">Email</label> *@
+        @*             <input placeholder="Email"/> *@
+        @*         </div> *@
+        @*         <div class="input-group"> *@
+        @*             <label class="sr-only">Financial consulting</label> *@
+        @*             <input placeholder="Financial Consulting"/> *@
+        @*         </div> *@
+        @*     </div> *@
+        @* *@
+        @*     <button class="btn-primary">Submit</button> *@
+        @* </form> *@
     </div>
 </section>

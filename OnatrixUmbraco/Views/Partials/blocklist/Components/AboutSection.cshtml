@@ -4,12 +4,12 @@
 @{
     var content = (ContentModels.AboutSection)Model.Content;
     var settings = Model.Settings as ContentModels.AboutSectionSettings;
-
-    var options = settings?.CallbackRequestOptions ?? [];
-    var callbackFormModel = new CallbackFormViewModel() { Options = options };
     
     var rootContent = Umbraco.ContentAtRoot();
     var siteSettings = rootContent.OfType<ContentModels.SiteSettings>().FirstOrDefault();
+
+    var callbackFormOptions = siteSettings?.CallbackFormOptions ?? [];
+    var callbackFormModel = new CallbackFormViewModel() { Options = callbackFormOptions };
 }
 
 <section class="about-us">
