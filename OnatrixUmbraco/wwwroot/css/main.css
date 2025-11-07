@@ -185,6 +185,60 @@ blockquote, blockquote * {
     }
 }
 
+.input-validation-error {
+    box-shadow: var(--error-box-shadow);
+    
+    &:focus {
+        border: 1px solid firebrick;
+    }
+}
+
+.field-validation-error {
+    color: firebrick;
+    font-size: 0.7rem;
+    font-weight: 300;
+}
+
+.form-feedback-error {
+    padding-inline: 1.5rem;
+    p {
+        background-color: var(--error-message-bg);
+        color: var(--error-message-color);
+        padding-block: 1.5rem;
+    }
+}
+
+.form-feedback-success {
+    padding-inline: 1.5rem;
+    p {
+        background-color: var(--sucess-message-bg);
+        color: var(--sucess-message-color);
+        padding-block: 1.5rem;
+    }
+}
+
+.custom-select-input {
+    display: flex;
+    align-items: center;
+    position: relative;
+    
+    select {
+        flex: 1;
+        appearance: none;
+        font-size: 1rem;
+        border: 1px solid var(--note-color);
+        color: var(--text-color-dark);
+        padding: 1rem 2rem 1rem 1rem;
+    }
+    
+    .select-input-icon {
+        position: absolute;
+        right: 10px;
+        top: 50%;
+        transform: translateY(-50%);
+        pointer-events: none;
+    }
+}
 
 
 
@@ -485,21 +539,28 @@ header {
             font-size: 1.875rem;
             font-weight: 700;
             margin-bottom: 2rem;
-            padding: 1.5rem;
+            padding-block: 1.5rem;
+        }
+        
+        p, h3 {
+            padding-inline: 2rem;
+        }
+        
+        p {
+            margin-bottom: 1rem;
         }
 
-        .input-group {
+        form {
             padding-inline: 2rem;
             padding-bottom: 2rem;
             display: flex;
             flex-direction: column;
-            gap: 1rem;
+            gap: 1.5rem;
         }
 
         input, select {
             width: 100%;
             padding: 0.875rem;
-            margin-bottom: 1rem;
             border: 1px solid var(--note-color);
             background-color: transparent;
             color: var(--text-color-dark);
