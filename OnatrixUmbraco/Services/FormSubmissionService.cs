@@ -24,4 +24,9 @@ public class FormSubmissionService(IContentService contentService)
         var saveResult = _contentService.Save(request);
         return saveResult.Success;
     }
+
+    public bool SaveQuestionRequest(QuestionFormViewModel model)
+    {
+        return true;
+    }
 }
