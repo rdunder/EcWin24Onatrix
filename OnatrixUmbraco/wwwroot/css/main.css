@@ -228,20 +228,26 @@ blockquote, blockquote * {
 }
 
 .form-feedback-error {
-    padding-inline: 1.5rem;
+    padding-inline: 1rem;
+    margin-top: 1rem;
+    
     p {
         background-color: var(--error-message-bg);
         color: var(--error-message-color);
-        padding-block: 1.5rem;
+        padding-block: 1rem;
+        text-align: center;
     }
 }
 
 .form-feedback-success {
-    padding-inline: 1.5rem;
+    padding-inline: 1rem;
+    margin-top: 1rem;
+    
     p {
         background-color: var(--sucess-message-bg);
         color: var(--sucess-message-color);
-        padding-block: 1.5rem;
+        padding-block: 1rem;
+        text-align: center;
     }
 }
 
