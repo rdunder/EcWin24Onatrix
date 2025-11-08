@@ -11,7 +11,7 @@ using Umbraco.Cms.Web.Website.Controllers;
 
 namespace OnatrixUmbraco.Controllers;
 
-public class CallbackFormController(
+public class FormController(
     IUmbracoContextAccessor umbracoContextAccessor,
     IUmbracoDatabaseFactory databaseFactory,
     ServiceContext services,
@@ -29,7 +29,7 @@ public class CallbackFormController(
     private readonly FormSubmissionService _formSubmissionService = formSubmissionService;
     
     [HttpPost]
-    public IActionResult Submit(CallbackFormViewModel model)
+    public IActionResult CallbackFormSubmit(CallbackFormViewModel model)
     {
         if (!ModelState.IsValid)
         {
@@ -37,6 +37,26 @@ public class CallbackFormController(
         }
 
         var result = _formSubmissionService.SaveCallbackRequest(model);
+
+        if (!result)
+        {
+            TempData["FormError"] = "Something went wrong";
+            return RedirectToCurrentUmbracoPage();
+        }
+        
+        TempData["Success"] = "Thank you for your submission";
+        return RedirectToCurrentUmbracoPage();
+    }
+
+    [HttpPost]
+    public IActionResult QuestionFormSubmit(QuestionFormViewModel model)
+    {
+        if (!ModelState.IsValid)
+        {
+            return CurrentUmbracoPage();
+        }
+        
+        var result = _formSubmissionService.SaveQuestionRequest(model);
 
         if (!result)
         {

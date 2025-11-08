@@ -21,29 +21,17 @@
         
         <partial name="Partials/Forms/CallbackForm" model="callbackFormModel"/>
         
-        @* <form> *@
-        @*     <div class="flex-container"> *@
-        @*         <div class="input-group"> *@
-        @*             <label class="sr-only">Name</label> *@
-        @*             <input placeholder="Name"/> *@
-        @*         </div> *@
-        @*         <div class="input-group"> *@
-        @*             <label class="sr-only">Phone</label> *@
-        @*             <input placeholder="Phone"/> *@
-        @*         </div> *@
-        @*     </div> *@
-        @*     <div class="flex-container"> *@
-        @*         <div class="input-group"> *@
-        @*             <label class="sr-only">Email</label> *@
-        @*             <input placeholder="Email"/> *@
-        @*         </div> *@
-        @*         <div class="input-group"> *@
-        @*             <label class="sr-only">Financial consulting</label> *@
-        @*             <input placeholder="Financial Consulting"/> *@
-        @*         </div> *@
-        @*     </div> *@
-        @* *@
-        @*     <button class="btn-primary">Submit</button> *@
-        @* </form> *@
+        @if (TempData["FormError"] != null)
+        {
+            <div class="form-feedback-error">
+                <p>@TempData["FormError"]</p>
+            </div>
+        }
+        else if (TempData["Success"] != null)
+        {
+            <div class="form-feedback-success">
+                <p>@TempData["Success"]</p>
+            </div>
+        }
     </div>
 </section>

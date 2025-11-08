@@ -1,4 +1,5 @@
-﻿@using Umbraco.Cms.Core.Models
+﻿@using OnatrixUmbraco.ViewModels
+@using Umbraco.Cms.Core.Models
 @using Umbraco.Cms.Web.Common.PublishedModels;
 @inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage<ServiceDetail>
 @{
@@ -19,7 +20,23 @@
 			</div>
 		</div>
 		<div class="service-page-form">
+			<h3>Have a question ?</h3>
+			<partial name="Partials/Forms/QuestionForm" model="@(new QuestionFormViewModel())"/>
 			
+			@if (TempData["FormError"] != null)
+			{
+				<div class="form-feedback-error">
+					<p>@TempData["FormError"]</p>
+				</div>
+			}
+			else if (TempData["Success"] != null)
+			{
+				<div class="form-feedback-success">
+					<p>@TempData["Success"]</p>
+				</div>
+			}
 		</div>
 	</div>
 </section>
+
+@Html.GetBlockListHtml(Model.ServiceDetailAditionalSections)
