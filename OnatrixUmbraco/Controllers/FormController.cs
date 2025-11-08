@@ -56,6 +56,15 @@ public class FormController(
             return CurrentUmbracoPage();
         }
         
+        var result = _formSubmissionService.SaveQuestionRequest(model);
+
+        if (!result)
+        {
+            TempData["FormError"] = "Something went wrong";
+            return RedirectToCurrentUmbracoPage();
+        }
+        
+        TempData["Success"] = "Thank you for your submission";
         return RedirectToCurrentUmbracoPage();
     }
 }
