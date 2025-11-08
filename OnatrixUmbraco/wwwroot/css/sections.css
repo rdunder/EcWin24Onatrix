@@ -354,6 +354,38 @@
         }
     }
     
+    .service-page-form {
+        margin-top: 3rem;
+        
+        h3 {
+            margin-bottom: 2.5rem;
+            font-size: 1.6rem;
+        }
+    }
+    
+    form {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 2rem;
+        
+        .input-group:nth-child(3) {
+            grid-column: span 2;
+        }
+        
+        button {
+            grid-column: 1;
+            justify-self: start;
+        }
+        
+        @media (width <= 768px) {
+            grid-template-columns: 1fr;
+
+            .input-group:nth-child(3), button {
+                grid-column: auto;
+            }
+        }
+    }
+    
     @media (width <= 768px) {
         aside {
             display: none;

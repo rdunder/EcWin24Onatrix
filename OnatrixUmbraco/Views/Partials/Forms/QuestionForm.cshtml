@@ -25,10 +25,14 @@
     
     <div class="input-group">
         <label asp-for="Question" class="sr-only"></label>
-        <input asp-for="Question" type="text" placeholder="@Html.DisplayNameFor(x => x.Question)" />
+        <textarea 
+                asp-for="Question" 
+                placeholder="@Html.DisplayNameFor(x => x.Question)"
+                rows="5">    
+        </textarea>
         <span asp-validation-for="Question"></span>
     </div>
     
-    <button type="submit">Submit</button>
+    <button class="btn-primary" type="submit">Submit</button>
 }
 
