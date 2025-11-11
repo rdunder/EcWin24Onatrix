@@ -8,6 +8,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="Azure.Communication.Email" Version="1.1.0" />
     <PackageReference Include="Umbraco.Cms" Version="16.3.4" />
     <PackageReference Include="Umbraco.StorageProviders.AzureBlob" Version="16.0.0" />
     <PackageReference Include="Umbraco.StorageProviders.AzureBlob.ImageSharp" Version="16.0.0" />

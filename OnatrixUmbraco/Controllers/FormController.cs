@@ -29,14 +29,14 @@ public class FormController(
     private readonly FormSubmissionService _formSubmissionService = formSubmissionService;
     
     [HttpPost]
-    public IActionResult CallbackFormSubmit(CallbackFormViewModel model)
+    public async Task<IActionResult> CallbackFormSubmit(CallbackFormViewModel model)
     {
         if (!ModelState.IsValid)
         {
             return CurrentUmbracoPage();
         }
 
-        var result = _formSubmissionService.SaveCallbackRequest(model);
+        var result = await _formSubmissionService.SaveCallbackRequest(model);
 
         if (!result)
         {
@@ -49,14 +49,14 @@ public class FormController(
     }
 
     [HttpPost]
-    public IActionResult QuestionFormSubmit(QuestionFormViewModel model)
+    public async Task<IActionResult> QuestionFormSubmit(QuestionFormViewModel model)
     {
         if (!ModelState.IsValid)
         {
             return CurrentUmbracoPage();
         }
         
-        var result = _formSubmissionService.SaveQuestionRequest(model);
+        var result = await _formSubmissionService.SaveQuestionRequest(model);
 
         if (!result)
         {
