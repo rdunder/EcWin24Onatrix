@@ -22,7 +22,7 @@
         <a class="logo" href="/">
             <img src="@siteSettings.SiteLogo.Url()" alt="@siteSettings.SiteName" />
         </a>
-        <nav class="">
+        <nav class="" id="main-header-nav">
             @if (selection?.Length > 0)
             {
                 <ul>
@@ -38,9 +38,10 @@
         <div>
             <button class="site-search"><i class="fa-solid fa-magnifying-glass"></i></button>
         </div>
-        <button class="mobile-menu-togle">
+        <button class="mobile-menu-togle" id="mobile-menu-togle">
             <i class="fa-solid fa-bars"></i>
         </button>
     </div>
+
 </div>
 

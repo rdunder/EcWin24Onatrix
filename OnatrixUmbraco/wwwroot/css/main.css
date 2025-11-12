@@ -389,11 +389,11 @@ header {
             align-items: center;
             gap: 0.4rem;
         }
-        
+
         a {
             border-left: 1px solid var(--border-color);
             padding-inline: 0.4rem;
-            
+
             &:last-child {
                 border-right: 1px solid var(--border-color);
             }
@@ -412,7 +412,6 @@ header {
             .container {
                 justify-content: center;
             }
-
         }
     }
 
@@ -459,21 +458,25 @@ header {
 
             @media (width <= 768px) {
                 position: absolute;
-                right: 0;
-                top: -100vh;
-                transition: top 0.3s ease-in-out;
+                top: 100%;
+                right: -220px;
+                transition: right 0.4s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.3s ease-in-out;
+                opacity: 0;
 
 
                 ul {
                     flex-direction: column;
+                    align-items: center;
                     background-color: var(--bg-light);
                     width: 200px;
                     box-shadow: var(--box-shadow);
-                    padding: 1rem;
+                    padding-top: 1.5rem;
+                    padding-bottom: 5rem;
                 }
 
                 &.show {
-                    top: 5rem;
+                    right: 0;
+                    opacity: 1;
                 }
             }
         }
@@ -712,6 +715,10 @@ header {
                 height: 100%;
                 right: 0px;
                 top: 0px;
+            }
+
+            @media (width <= 500px) {
+                display: none;
             }
         }
 
