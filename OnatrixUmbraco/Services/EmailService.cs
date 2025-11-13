@@ -20,7 +20,7 @@ public class EmailService(ILogger<EmailService> logger, IConfiguration config, E
                 
                 recipients: new EmailRecipients(new List<EmailAddress>
                 {
-                    new EmailAddress("surbiff@gmail.com")
+                    new EmailAddress(recipient)
                 }),
                 
                 content: new EmailContent(subject)
@@ -28,15 +28,16 @@ public class EmailService(ILogger<EmailService> logger, IConfiguration config, E
                     PlainText = message
                 }
             );
-        
+
             await _emailClient.SendAsync(WaitUntil.Completed, emailMessage);
-            _logger.LogInformation("Email sent");
+            _logger.LogInformation("Email sent: {Recipient} -- {Subject} -- {Message}", recipient, subject, message);
+
         }
         catch (Exception e)
         {
             
             _logger.LogError($"An error occurred trying to send Email:  {e.Message}");
-            _logger.LogError($"VALUES: {recipient} -- {subject} -- {message}");
+            _logger.LogError("VALUES: {Recipient} -- {Subject} -- {Message}", recipient, subject, message);
             return;
         }
     }
